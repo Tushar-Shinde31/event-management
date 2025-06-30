@@ -93,8 +93,6 @@ const App = () => {
       {/* Filter controls */}
       <div className="filters-container">
         <h3 className="filters-title">
-          <Filter size={20} />
-          Search Events
         </h3>
         <div className="filters-grid">
           <div className="form-group">
