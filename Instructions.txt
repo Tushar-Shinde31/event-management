@@ -1,0 +1,81 @@
+📘 Project Name: Online Event Management System
+
+🔗 Local Frontend: http://localhost:5173  
+🔗 Local Backend: http://localhost:5000/api/events
+
+🎯 Objective:
+Build a full-stack event management system that handles events and their attendees using Express, MongoDB, and React. This project emphasizes nested data operations, advanced querying, filtering, and clean frontend state management.
+
+🧠 Concepts Covered (Unit 5):
+▫ Express API with nested routes and modular controllers
+▫ MongoDB nested schemas (attendees inside events)
+▫ useState & useEffect for dynamic UI
+▫ Controlled components for forms
+▫ Props-driven component communication
+▫ Filtering, searching, and sorting from the frontend
+▫ Axios for async data fetch and mutation
+
+🛠️ Features Implemented:
+▫ Add, view, and list all events
+▫ Add attendees to specific events
+▫ Delete individual attendees from events
+▫ Filter events by category and title search
+▫ Show all attendees nested under their event
+▫ Simple responsive layout with separate components
+
+📂 Backend Structure:
+backend/
+├── config/db.js                   # MongoDB connection
+├── models/Event.js               # Event model with nested attendees
+├── routes/eventRoutes.js         # Route definitions
+├── controllers/eventController.js  # API logic and query handlers
+├── server.js                     # Express server
+└── .env                          # MONGO_URI and PORT
+
+📂 Frontend Structure:
+frontend/
+├── App.jsx                       # Root component with main logic
+├── main.jsx                      # Entry point
+└── components/
+    ├── EventForm.jsx             # Form to add new event
+    ├── EventList.jsx             # Event listing
+    ├── EventItem.jsx             # Single event block with attendee logic
+    └── AttendeeForm.jsx          # Add attendee to an event
+
+✅ Sample Output:
++-------------------------------------------------------+
+| 🏷️ React Bootcamp                                     |
+| 📍 Pune | 📅 July 15, 2025 | Category: Workshop       |
+| 👥 Attendees:                                         |
+| - Tushar (tushar@example.com) [❌]                    |
+| [+ Add Attendee]                                     |
++-------------------------------------------------------+
+
+📌 Run Instructions:
+
+🔹 Backend:
+1️⃣ `cd backend`
+2️⃣ Create `.env` file with:
+    MONGO_URI=mongodb://127.0.0.1:27017/event_manager  
+    PORT=5000
+3️⃣ `npm install`
+4️⃣ `npm run dev`
+
+🔹 Frontend:
+1️⃣ `cd frontend`
+2️⃣ `npm install`
+3️⃣ `npm run dev`
+4️⃣ Open browser: http://localhost:5173
+
+🧪 API Endpoints for Thunder Client:
+▫ `POST /api/events` → Create a new event  
+▫ `GET /api/events` → List all events (supports ?search & ?category)  
+▫ `POST /api/events/:id/attendees` → Add attendee to event  
+▫ `DELETE /api/events/:id/attendees/:index` → Remove attendee by index  
+▫ `GET /api/events/stats/category` → Aggregation by category
+
+📚 Tips for Teachers:
+- Teach how nested documents simplify related data storage
+- Compare frontend and backend sync through Axios calls
+- Explore edge cases like duplicate attendees or empty fields
+
