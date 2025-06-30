@@ -17,14 +17,15 @@ const App = () => {
 
   // Fetch events from backend with query filters
   const fetchEvents = async () => {
-    setLoading(true);
-    try {
-      const res = await axios.get('/api/events', {
-        params: {
-          search: filters.search,
-          category: filters.category,
-        },
-      });
+   setLoading(true);
+try {
+  const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/events`, {
+    params: {
+      search: filters.search,
+      category: filters.category,
+    },
+  });
+
       setEvents(res.data.data || []);
     } catch (error) {
       console.error("Error fetching events:", error);
